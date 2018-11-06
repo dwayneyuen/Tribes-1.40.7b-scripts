@@ -80,7 +80,7 @@ function remoteAdminPassword( %cl, %password ) {
 	schedule( "admin::findduplicateusers(" @ %cl @ ");", 5 );  //wait 5 seconds so we don't override the "has logged in" message sent to Uadmins.
 
 	if (%cl.canSeePlayerlist)
-		admin::dumpplayerlist();
+		admin::dumpplayerlist(%cl);
 
 	// allow admin to relogin to see player list without broadcasting alert or logging
 	if ( %oldLevel != %cl.adminLevel ) {
