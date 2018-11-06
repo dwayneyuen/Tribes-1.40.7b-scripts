@@ -87,6 +87,9 @@ function alertPlayer(%player, %count)
 
 function leaveMissionAreaDamage(%client)
 {
+	// Disable OOB damage
+	return;
+
 	echo( "leave mission area: " @ %client );
 	
 	%player = Client::getOwnedObject(%client);
