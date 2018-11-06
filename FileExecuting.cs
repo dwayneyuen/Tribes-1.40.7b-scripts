@@ -26,4 +26,4 @@ LoadServerData();
 // ====================================================================================================== //
 
 banlist::load( $Server::BanFile );
-banlist::loadexclusions( $Server::ExlusionFile );
+banlist::loadexclusions( $Server::ExclusionFile );

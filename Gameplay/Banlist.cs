@@ -81,7 +81,7 @@ function banlist::isexcluded( %cl ) {
 			continue;
 
 		for ( %i = 0; %i < 6; %i++ ) {
-			if ( $exlusionlist[ %idx, %i ] == %name )
+			if ( $exclusionlist[ %idx, %i ] == %name )
 				return ( true );
 		}
 	}
