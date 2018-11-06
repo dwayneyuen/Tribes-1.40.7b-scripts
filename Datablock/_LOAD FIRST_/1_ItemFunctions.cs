@@ -49,6 +49,9 @@ $PrevWeapon[EnergyRifle] = LaserRifle;
 
 function remoteNextWeapon(%client)
 {
+	if (Player::getClient(%client) == -1)
+		return;
+
 	%item = Player::getMountedItem(%client,$WeaponSlot);
 	if (%item == -1 || $NextWeapon[%item] == "")
 		selectValidWeapon(%client);
@@ -69,6 +72,9 @@ function remoteNextWeapon(%client)
 
 function remotePrevWeapon(%client)
 {
+	if (Player::getClient(%client) == -1)
+		return;
+
 	%item = Player::getMountedItem(%client,$WeaponSlot);
 	if (%item == -1 || $PrevWeapon[%item] == "")
 		selectValidWeapon(%client);
@@ -478,6 +484,9 @@ function remoteThrowItem(%client,%type,%strength)
 function remoteDropItem(%client,%type)
 {
 	if ( flood::getdelay( %client, "dropitem", 15, 10 ) )
+		return;
+
+	if (Player::getClient(%client) == -1)
 		return;
 	
 	if((Client::getOwnedObject(%client)).driver != 1) {
