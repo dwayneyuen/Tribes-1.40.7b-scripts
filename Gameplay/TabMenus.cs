@@ -35,6 +35,7 @@ function remoteMenuSelect( %cl, %code ) {
 		return;
 
 	%eval = "processMenu" @ %cl.menuMode @ "(" @ %cl @ ", \"" @ %code @ "\");";
+	echo("process menu:" @ %eval);
 	%cl.menuMode = "";
 	%cl.menuLock = "";
 	dbecho(2, "MENU: " @ %cl @ "- " @ %eval);
