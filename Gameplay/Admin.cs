@@ -386,7 +386,7 @@ function menu::admin( %cl ) {
 	menu::add( "Start the match", "smatch", %cl, (%cl.canForceMatchStart && %waiting) );
 	menu::add( "Change to Tournament mode", "ctourney", %cl, (%cl.canChangeGameMode && !$Server::TourneyMode) );
 	menu::add( "Set Time Limit", "ctimelimit", %cl, %cl.canChangeTimeLimit );
-	menu::add( "Announce Server Takeover", "takeovermes", %cl, %cl.canAnnounceTakeover );
+	// menu::add( "Announce Server Takeover", "takeovermes", %cl, %cl.canAnnounceTakeover );
 	menu::add( "Server Toggles...", "serverToggles", %cl );
 	menu::add( "Vote options...", "voteOptions", %cl );
 }
