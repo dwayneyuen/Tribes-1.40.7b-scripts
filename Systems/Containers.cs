@@ -13,7 +13,7 @@ function C::Get( %event ) {
 }
 
 function C::Inc( %event, %amt ) {
-	echof( "Incrementing %1 by %2", %event, %amt );
+	// echof( "Incrementing %1 by %2", %event, %amt );
 	$C::Amount[ %event ] += %amt;
 }
 
