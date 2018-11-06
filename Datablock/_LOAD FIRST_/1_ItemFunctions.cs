@@ -466,7 +466,7 @@ function remoteThrowItem(%client,%type,%strength)
 	if(%player.Station == "" && %player.waitThrowTime + $WaitThrowTime <= getSimTime()) {
 		if(GameBase::getControlClient(%player) != -1 || %player.vehicle != "") {
 		//if(GameBase::getControlClient(%player) != -1) {
-	  		echo("Throw item: " @ %type @ " " @ %strength);
+	  		// echo("Throw item: " @ %type @ " " @ %strength);
 			%item = getItemData(%type);
 			if (%item == Grenade || %item == MineAmmo) {
 				if (%strength < 0)
@@ -799,7 +799,7 @@ function Item::deployShape(%player,%name,%shape,%item)
 						Gamebase::setMapName(%sensor,%name);
 						Client::sendMessage(%client,0,%item.description @ " deployed");
 						playSound(SoundPickupBackpack,$los::position);
-						echo("MSG: ",%client," deployed a ",%name);
+						// echo("MSG: ",%client," deployed a ",%name);
 						return true;
 					}
 				}
