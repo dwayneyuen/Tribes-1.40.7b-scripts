@@ -326,12 +326,12 @@ function Game::initialMissionDrop( %cl ) {
 			message::bottomprint(%cl, "<jc><f1>Server is running in Competition Mode\nPick a team.\nTeam damage is " @ %td, 0);
 		}
 
-		menu::new( "Pick a team:", "InitialPickTeam", %cl );
-		menu::add( "Observe", -2, %cl );
-		menu::add( "Automatic", -1, %cl );
+		Client::buildMenu(%cl, "Pick a team:", "InitialPickTeam");
+		Client::addMenuItem(%cl, "0Observe", -2);
+		Client::addMenuItem(%cl, "1Automatic", -1);
 
 		for(%i = 0; %i < getNumTeams(); %i = %i + 1)
-			menu::add ( getTeamName(%i), %i, %cl );
+			Client::addMenuItem(%cl, (%i+2) @ getTeamName(%i), %i);
 		%cl.justConnected = "";
 	} else {
 		Client::setSkin(%cl, $Server::teamSkin[Client::getTeam(%cl)]);
