@@ -28,7 +28,7 @@ function TimeC::Clear( %prefix ) {
 function TimeC::Update( %event, %state ) {
 	%now = getSimTime();
 	
-	echof( "%1: %2", %event, $TimeC::State[ %event ] );
+	// echof( "%1: %2", %event, $TimeC::State[ %event ] );
 	if ( $TimeC::State[ %event ] != "" ) {
 		%oldstate = $TimeC::State[ %event ];
 		%duration = ( %now - $TimeC::State[ %event, "time" ] );
